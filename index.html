@@ -98,7 +98,7 @@
         delimiter: ','
       }, function (err, data) {
         map.on('load', function () {
-          map.loadImage('mapbox-marker-icon-pink.png', (error, image) => {
+          map.loadImage('mapbox-marker-icon-pink.png', (error, image) => { // マーカー
             if (error) throw error;
             map.addImage('custom-marker', image);
             map.addLayer({
