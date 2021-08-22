@@ -84,7 +84,7 @@
   $(document).ready(function () {
     $.ajax({
       type: "GET",
-      url: 'https://docs.google.com/spreadsheets/d/1KIZpRo-WztrCLK4GreknsYz4bT6Mv5FgtUgzNz0GUQ0/gviz/tq?tqx=out:csv&sheet=map data',
+      url: 'https://docs.google.com/spreadsheets/d/1ry2hwuzi-SArBQhrsDAP9LTJHBbi3hAyWGo9a4JBxfI/gviz/tq?tqx=out:csv&sheet=map data',
       dataType: "text",
       success: function (csvData) {
         makeGeoJSON(csvData);
