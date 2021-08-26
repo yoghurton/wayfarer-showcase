@@ -113,6 +113,131 @@
             },
             'filter': ['==', '$type', 'Point'],
           });
+          map.addSource("cells", {
+            "type": "geojson",
+            "data": {
+              "type": "FeatureCollection",
+              "features": [{
+                "type": "Feature",
+                "geometry": {
+                  "type": "LineString",
+                  "coordinates": [
+                    [140.477685, 41.303562],
+                    [141.726310, 40.537567],
+                    [143.169132, 41.086293],
+                    [141.935777, 41.885495],
+                    [140.477685, 41.303562]
+                  ]
+                },
+                "properties": {
+                  "cell": "hoge"
+                }
+              }, {
+                "type": "Feature",
+                "geometry": {
+                  "type": "LineString",
+                  "coordinates": [
+                    [139.054089, 40.707123],
+                    [140.314546, 39.974148],
+                    [141.726310, 40.537567],
+                    [140.477685, 41.303562],
+                    [139.054089, 40.707123]
+                  ]
+                },
+                "properties": {
+                  "cell": "hoge"
+                }
+              }, {
+                "type": "Feature",
+                "geometry": {
+                  "type": "LineString",
+                  "coordinates": [
+                    [140.314546, 39.974148],
+                    [141.530503, 39.238612],
+                    [142.928303, 39.770261],
+                    [141.726310, 40.537567],
+                    [140.314546, 39.974148]
+                  ]
+                },
+                "properties": {
+                  "cell": "hoge"
+                }
+              }, {
+                "type": "Feature",
+                "geometry": {
+                  "type": "LineString",
+                  "coordinates": [
+                    [138.935125, 39.397697],
+                    [140.161913, 38.693712],
+                    [141.530503, 39.238612],
+                    [140.314546, 39.974148],
+                    [138.935125, 39.397697]
+                  ]
+                },
+                "properties": {
+                  "cell": "hoge"
+                }
+              }, {
+                "type": "Feature",
+                "geometry": {
+                  "type": "LineString",
+                  "coordinates": [
+                    [140.161913, 38.693712],
+                    [141.347016, 37.987815],
+                    [142.702796, 38.502356],
+                    [141.530503, 39.238612],
+                    [140.161913, 38.693712]
+                  ]
+                },
+                "properties": {
+                  "cell": "hoge"
+                }
+              }, {
+                "type": "Feature",
+                "geometry": {
+                  "type": "LineString",
+                  "coordinates": [
+                    [138.823718, 38.137102],
+                    [140.018765, 37.461319],
+                    [141.347016, 37.987815],
+                    [140.161913, 38.693712],
+                    [138.823718, 38.137102]
+                  ]
+                },
+                "properties": {
+                  "cell": "hoge"
+                }
+              }, {
+                "type": "Feature",
+                "geometry": {
+                  "type": "LineString",
+                  "coordinates": [
+                    [140.018765, 37.461319],
+                    [140.018765, 36.300150],
+                    [141.347016, 36.820660],
+                    [141.347016, 37.987815],
+                    [140.018765, 37.461319]
+                  ]
+                },
+                "properties": {
+                  "cell": "hoge"
+                }
+              }]
+            }
+          });
+          map.addLayer({
+            'id': 'cells',
+            'type': 'line',
+            'source': 'cells',
+            'layout': {
+              'line-join': 'round',
+              'line-cap': 'round'
+            },
+            'paint': {
+              'line-color': '#ff6e00',
+              'line-width': 2,
+            }
+          });
           map.on('click', 'csvData', function (e) {
             var coordinates = e.features[0].geometry.coordinates.slice();
             var description = `<h3>` + e.features[0].properties.title + `</h3>` + `<h4>` + `<b>` + `Location: ` + `</b>` + e.features[0].properties.location + `</h4>` + `<h4>` + `<b>` + `Intel: ` + `</b><a href="` + e.features[0].properties.intel + `">` + e.features[0].properties.intel + `</a></h4>` + `<img src="` + e.features[0].properties.image + `">`;
