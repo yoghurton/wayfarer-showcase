@@ -97,23 +97,7 @@
         lonfield: 'lng',
         delimiter: ','
       }, function (err, data) {
-        map.on('load', function () {
-          map.addLayer({
-            'id': 'csvData',
-            'type': 'circle',
-            'source': {
-              'type': 'geojson',
-              'data': data
-            },
-            'paint': {
-              'circle-radius': 5.0,
-              'circle-color': '#ff0099',
-              'circle-stroke-width': 1.5,
-              'circle-stroke-color': '#222222'
-            },
-            'filter': ['==', '$type', 'Point'],
-          });
-          
+        map.on('load', function () {          
           map.addSource("cells", {
             "type": "geojson",
             "data": {
@@ -1440,6 +1424,22 @@
               'line-width': 2,
             }
           });
+
+          map.addLayer({
+            'id': 'csvData',
+            'type': 'circle',
+            'source': {
+              'type': 'geojson',
+              'data': data
+            },
+            'paint': {
+              'circle-radius': 5.0,
+              'circle-color': '#ff0099',
+              'circle-stroke-width': 1.5,
+              'circle-stroke-color': '#222222'
+            },
+            'filter': ['==', '$type', 'Point'],
+          });          
           
           map.on('click', 'csvData', function (e) {
             var coordinates = e.features[0].geometry.coordinates.slice();
