@@ -82,14 +82,14 @@
       vertical-align:baseline;
       background:transparent;
     }
-ul.inline {
+ul {
   list-style:none;
   padding-left:0;
 }
-ul.inline > li {
+ul > li {
   display:inline;
 }
-ul.inline > li:not(:nth-child(1)):before {
+ul > li:not(:nth-child(1)):before {
   content:" | ";
   color:silver;
 }
@@ -99,7 +99,7 @@ ul.inline > li:not(:nth-child(1)):before {
 <body>
   <div id='map'></div>
   <div id="menu">
-    <ul　class="inline">
+    <ul>
       <li type="disc"><a href="https://docs.google.com/spreadsheets/d/1ry2hwuzi-SArBQhrsDAP9LTJHBbi3hAyWGo9a4JBxfI/edit?usp=sharing">データ (スプレッドシート)</a></li>
       <li type="disc"><a href="https://forms.gle/JbQJandHtdTSoeLp8">データ登録用フォーム</a></li>
     </ul>
