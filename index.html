@@ -83,18 +83,7 @@
   </style>  
   <div id='map'></div>
 
-<div id="menu">
-<input id="yoghurton/cksn875dm2ivp17poo64eew9m" type="radio" name="rtoggle" value="streets" checked="checked">
-<label for="streets-yoghurton">streets</label>
-<input id="mapbox/satellite-v9" type="radio" name="rtoggle" value="satellite">
-<label for="satellite-v9">satellite</label>
-<input id="mapbox/light-v10" type="radio" name="rtoggle" value="light">
-<label for="light-v10">light</label>
-<input id="mapbox/dark-v10" type="radio" name="rtoggle" value="dark">
-<label for="dark-v10">dark</label>
-<input id="mapbox/outdoors-v11" type="radio" name="rtoggle" value="outdoors">
-<label for="outdoors-v11">outdoors</label>
-</div>
+<div id="menu">ほげほげほげほげほげほげほげほげほげ</div>
 
   <script>
   var transformRequest = (url, resourceType) => {
@@ -114,20 +103,6 @@
     
   
   $(document).ready(function () {
-
-
-const layerList = document.getElementById('menu');
-const inputs = layerList.getElementsByTagName('input');
-
-for (const input of inputs) {
-input.onclick = (layer) => {
-const layerId = layer.target.id;
-map.setStyle('mapbox://styles/' + layerId);
-};
-}
-
-
-
 
     $.ajax({
       type: "GET",
