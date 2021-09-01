@@ -30,7 +30,7 @@
     .mapboxgl-popup-content {
       font: 400 12px/18px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
       padding: 0;
-      width: 300px;
+      width: 275px;
     }
     .mapboxgl-popup-content-wrapper {
       padding: 1%;
@@ -48,10 +48,11 @@
     .mapboxgl-popup-content h4 {
       margin: 0;
       display: block;
-      padding: 5px 3px 5px 10px;
+      padding: 5px;
       font-weight: 400;
     }
     .mapboxgl-popup-content img {
+      padding: 5px;
       width: 100%;
     }
     .mapboxgl-container {
@@ -71,7 +72,8 @@
     }
     #map {
       position: absolute;
-      top: 0; bottom: 0;
+      top: 0;
+      bottom: 0;
       width: 100%;
     }
     ul, li {
@@ -1499,7 +1501,7 @@
             });
             map.on('click', 'csvData', function (e) {
               var coordinates = e.features[0].geometry.coordinates.slice();
-              var description = `<h3>` + e.features[0].properties.title + `</h3><h4><b>` + `Location: ` + `</b>` + e.features[0].properties.location + `</h4><h4><b>` + `Intel: ` + `</b><a href="` + e.features[0].properties.intel + `">` + e.features[0].properties.intel + `</a></h4><h4><b>` + `Reginal Cell: ` + `</b>` + e.features[0].properties.reginalcell + `</h4><h4><b>` + `Category 1 : ` + `</b>` + e.features[0].properties.category1 + `</h4><h4><b>` + `Category 2 : ` + `</b>` + e.features[0].properties.category2 + `</h4><img src="` + e.features[0].properties.image + `">`;
+              var description = `<h3>` + e.features[0].properties.title + `</h3><h4><b>` + `Location: ` + `</b>` + e.features[0].properties.location + `</h4><h4><b>` + `Intel: ` + `</b><a href="` + e.features[0].properties.intel + `">` + e.features[0].properties.intel + `</a></h4><h4><b>` + `Regional Cell: ` + `</b>` + e.features[0].properties.regionalcell + `</h4><h4><b>` + `Category 1: ` + `</b>` + e.features[0].properties.category1 + `</h4><h4><b>` + `Category 2: ` + `</b>` + e.features[0].properties.category2 + `</h4><img src="` + e.features[0].properties.image + `">`;
               while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
                 coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
               }
