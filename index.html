@@ -65,7 +65,7 @@
     #menu {
       position: absolute;
       background: #efefef;
-      padding: 10px;
+      padding: 5px;
       font-family: 'Open Sans', sans-serif;
     }
     #map { 
@@ -82,24 +82,20 @@
       width: 100%; }
   </style>  
   <div id='map'></div>
-   
+
 <div id="menu">
-<input id="satellite-v9" type="radio" name="rtoggle" value="satellite" checked="checked">
-<!-- See a list of Mapbox-hosted public styles at -->
-<!-- https://docs.mapbox.com/api/maps/styles/#mapbox-styles -->
+<input id="yoghurton/cksn875dm2ivp17poo64eew9m" type="radio" name="rtoggle" value="streets" checked="checked">
+<input id="yoghurton/cksn875dm2ivp17poo64eew9m" type="radio" name="rtoggle" value="streets">
+<label for="streets-yoghurton">streets</label>
 <label for="satellite-v9">satellite</label>
-<input id="light-v10" type="radio" name="rtoggle" value="light">
+<input id="mapbox/light-v10" type="radio" name="rtoggle" value="light">
 <label for="light-v10">light</label>
-<input id="dark-v10" type="radio" name="rtoggle" value="dark">
+<input id="mapbox/dark-v10" type="radio" name="rtoggle" value="dark">
 <label for="dark-v10">dark</label>
-<input id="streets-v11" type="radio" name="rtoggle" value="streets">
-<label for="streets-v11">streets</label>
-<input id="outdoors-v11" type="radio" name="rtoggle" value="outdoors">
+<input id="mapbox/outdoors-v11" type="radio" name="rtoggle" value="outdoors">
 <label for="outdoors-v11">outdoors</label>
-</div>  
-  
-  
-  
+</div>
+
   <script>
   var transformRequest = (url, resourceType) => {
     var isMapboxRequest = url.slice(8, 22) === "api.mapbox.com" || url.slice(10, 26) === "tiles.mapbox.com";
@@ -122,7 +118,7 @@ const inputs = layerList.getElementsByTagName('input');
 for (const input of inputs) {
 input.onclick = (layer) => {
 const layerId = layer.target.id;
-map.setStyle('mapbox://styles/mapbox/' + layerId);
+map.setStyle('mapbox://styles/' + layerId);
 };
 }    
   
