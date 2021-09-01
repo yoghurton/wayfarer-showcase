@@ -112,17 +112,23 @@
     transformRequest: transformRequest
   });
     
+  
+  $(document).ready(function () {
+
+
 const layerList = document.getElementById('menu');
 const inputs = layerList.getElementsByTagName('input');
- 
+
 for (const input of inputs) {
 input.onclick = (layer) => {
 const layerId = layer.target.id;
 map.setStyle('mapbox://styles/' + layerId);
 };
-}    
-  
-  $(document).ready(function () {
+}
+
+
+
+
     $.ajax({
       type: "GET",
       url: 'https://docs.google.com/spreadsheets/d/1ry2hwuzi-SArBQhrsDAP9LTJHBbi3hAyWGo9a4JBxfI/gviz/tq?tqx=out:csv&sheet=map data',
