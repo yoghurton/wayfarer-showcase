@@ -1499,7 +1499,7 @@
             });
             map.on('click', 'csvData', function (e) {
               var coordinates = e.features[0].geometry.coordinates.slice();
-              var description = `<h3>` + e.features[0].properties.title + `</h3>` + `<h4>` + `<b>` + `Location: ` + `</b>` + e.features[0].properties.location + `</h4>` + `<h4>` + `<b>` + `Intel: ` + `</b><a href="` + e.features[0].properties.intel + `">` + e.features[0].properties.intel + `</a></h4>` + `<h4>` + `<b>` + `Reginal Cell: ` + `</b>` + e.features[0].properties.reginalcell + `</h4>` + `<img src="` + e.features[0].properties.image + `">`;
+              var description = `<h3>` + e.features[0].properties.title + `</h3><h4><b>` + `Location: ` + `</b>` + e.features[0].properties.location + `</h4><h4><b>` + `Intel: ` + `</b><a href="` + e.features[0].properties.intel + `">` + e.features[0].properties.intel + `</a></h4><h4><b>` + `Reginal Cell: ` + `</b>` + e.features[0].properties.reginalcell + `</h4><img src="` + e.features[0].properties.image + `">`;
               while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
                 coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
               }
