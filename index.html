@@ -27,7 +27,7 @@
       padding: 0;
       border: 0;
       outline: 0;
-      font-size: 90%;
+      font-size: 80%;
       vertical-align: baseline;
       background: transparent;
     }
@@ -80,15 +80,15 @@
       font-weight: 400;
     }
     .mapboxgl-popup-content {
-      font: 400 12px/18px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
+      font: 400 10px/16px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
       padding: 0;
-      width: 275px;
+      width: 225px;
     }
     .mapboxgl-popup-content-wrapper {
       padding: 1%;
     }
     .portalPhoto img {
-      width: 265px;
+      width: 215px;
       margin-top: 10px;
     }
     #map {
@@ -1524,7 +1524,7 @@
                 fcCode[i] = toColorCode(fc);
               }
               var coordinates = e.features[0].geometry.coordinates.slice();
-              var description = '<h3>' + e.features[0].properties.title + '</h3><h4><b>' + 'Location: ' + '</b>' + e.features[0].properties.location + '</h4><h4><b>' + 'Intel: ' + '</b><a href="' + e.features[0].properties.intel + '">' + e.features[0].properties.intel + '</a></h4><h4><b>' + 'Regional Cell: ' + '</b>' + e.features[0].properties.regionalcell + '</h4><h4><b>' + 'Category 1: ' + '</b><span class="category" style="color:' + fcCode[0] + '; background-color:' + bgCode[0] + ';">' + e.features[0].properties.category1 + '</span></h4><h4><b>' + 'Category 2: ' + '</b><span class="category" style="color:' + fcCode[1] + '; background-color:' + bgCode[1] + ';">' + e.features[0].properties.category2 + '</span></h4><div class="portalPhoto"><img src="' + e.features[0].properties.image + '"></div>';
+              var description = '<h3>' + e.features[0].properties.title + '</h3><h4><b>' + 'Location: ' + '</b>' + e.features[0].properties.location + '</h4><h4><b>' + 'Intel: ' + '</b><a href="' + e.features[0].properties.intel + '">' + e.features[0].properties.intel + '</a></h4><h4><b>' + 'Regional Cell: ' + '</b>' + e.features[0].properties.regionalcell + '</h4><h4><b>' + 'Unofficial Category: ' + '</b><span class="category" style="color:' + fcCode[0] + '; background-color:' + bgCode[0] + ';">' + e.features[0].properties.category1 + '</span> <span class="category" style="color:' + fcCode[1] + '; background-color:' + bgCode[1] + ';">' + e.features[0].properties.category2 + '</span></h4><div class="portalPhoto"><img src="' + e.features[0].properties.image + '"></div>';
               while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
                 coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
               }
