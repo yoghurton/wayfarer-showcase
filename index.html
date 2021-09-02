@@ -134,10 +134,7 @@
       zoom: 4.5,
       transformRequest: transformRequest
     });
-
-
     $(document).ready(function () {
-
       $.ajax({
         type: "GET",
         url: 'https://docs.google.com/spreadsheets/d/1ry2hwuzi-SArBQhrsDAP9LTJHBbi3hAyWGo9a4JBxfI/gviz/tq?tqx=out:csv&sheet=map data',
@@ -1511,14 +1508,12 @@
               'filter': ['==', '$type', 'Point'],
             });
             map.on('click', 'csvData', function (e) {
-
-
-              var catefory =[e.features[0].properties.category1, e.features[0].properties.category2]
+              var catefory = [e.features[0].properties.category1, e.features[0].properties.category2]
               var bgCode = ['#fff', '#fff'];
               var fcCode = ['#fff', '#fff'];
               var bg, fc, bgL, fcL;
-              for (var i = 0; i < 2; i++){
-                bg = crc32(catefory [i]);
+              for (var i = 0; i < 2; i++) {
+                bg = crc32(catefory[i]);
                 fc = [~bg[0] & 0xff, ~bg[1] & 0xff, ~bg[2] & 0xff, ];
                 bgL = brightness(bg[0], bg[1], bg[2]);
                 fcL = brightness(fc[0], fc[1], fc[2]);
@@ -1528,9 +1523,8 @@
                 bgCode[i] = toColorCode(bg);
                 fcCode[i] = toColorCode(fc);
               }
-
               var coordinates = e.features[0].geometry.coordinates.slice();
-              var description = '<h3>' + e.features[0].properties.title + '</h3><h4><b>' + 'Location: ' + '</b>' + e.features[0].properties.location + '</h4><h4><b>' + 'Intel: ' + '</b><a href="' + e.features[0].properties.intel + '">' + e.features[0].properties.intel + '</a></h4><h4><b>' + 'Regional Cell: ' + '</b>' + e.features[0].properties.regionalcell + '</h4><h4><b>' + 'Category 1: ' + '</b><span class="category"  style="color:' + bgCode[0] + '; background-color:' + bgCode[0] + ';">' + e.features[0].properties.category1 + '</span></h4><h4><b>' + 'Category 2: ' + '</b><span class="category"  style="color:' + bgCode[1] + '; background-color:' + bgCode[1] + ';">' + e.features[0].properties.category2 + '</span></h4><div class="portalPhoto"><img src="' + e.features[0].properties.image + '"></div>';
+              var description = '<h3>' + e.features[0].properties.title + '</h3><h4><b>' + 'Location: ' + '</b>' + e.features[0].properties.location + '</h4><h4><b>' + 'Intel: ' + '</b><a href="' + e.features[0].properties.intel + '">' + e.features[0].properties.intel + '</a></h4><h4><b>' + 'Regional Cell: ' + '</b>' + e.features[0].properties.regionalcell + '</h4><h4><b>' + 'Category 1: ' + '</b><span class="category" style="color:' + fcCode[0] + '; background-color:' + bgCode[0] + ';">' + e.features[0].properties.category1 + '</span></h4><h4><b>' + 'Category 2: ' + '</b><span class="category" style="color:' + fcCode[1] + '; background-color:' + bgCode[1] + ';">' + e.features[0].properties.category2 + '</span></h4><div class="portalPhoto"><img src="' + e.features[0].properties.image + '"></div>';
               while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
                 coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
               }
