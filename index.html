@@ -51,8 +51,11 @@
       padding: 2px 5px;
       font-weight: 400;
     }
-    .mapboxgl-popup-content img {
+    .mapboxgl-popup-content div.portalPhoto {
       width: 100%;
+    }
+    .mapboxgl-popup-content image {
+      padding: 5px;
     }
     .mapboxgl-container {
       cursor: pointer;
@@ -1500,7 +1503,7 @@
             });
             map.on('click', 'csvData', function (e) {
               var coordinates = e.features[0].geometry.coordinates.slice();
-              var description = `<h3>` + e.features[0].properties.title + `</h3><h4><b>` + `Location: ` + `</b>` + e.features[0].properties.location + `</h4><h4><b>` + `Intel: ` + `</b><a href="` + e.features[0].properties.intel + `">` + e.features[0].properties.intel + `</a></h4><h4><b>` + `Regional Cell: ` + `</b>` + e.features[0].properties.regionalcell + `</h4><h4><b>` + `Category 1: ` + `</b>` + e.features[0].properties.category1 + `</h4><h4><b>` + `Category 2: ` + `</b>` + e.features[0].properties.category2 + `</h4><img src="` + e.features[0].properties.image + `">`;
+              var description = `<h3>` + e.features[0].properties.title + `</h3><h4><b>` + `Location: ` + `</b>` + e.features[0].properties.location + `</h4><h4><b>` + `Intel: ` + `</b><a href="` + e.features[0].properties.intel + `">` + e.features[0].properties.intel + `</a></h4><h4><b>` + `Regional Cell: ` + `</b>` + e.features[0].properties.regionalcell + `</h4><h4><b>` + `Category 1: ` + `</b>` + e.features[0].properties.category1 + `</h4><h4><b>` + `Category 2: ` + `</b>` + e.features[0].properties.category2 + `</h4><div class="portalPhoto"><img src="` + e.features[0].properties.image + `"></div>`;
               while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
                 coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
               }
