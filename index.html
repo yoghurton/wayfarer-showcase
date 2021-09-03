@@ -11,105 +11,105 @@
   <script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
   <script src="https://kit.fontawesome.com/5015486454.js" crossorigin="anonymous"></script>
   <style>
-    a {
-      text-decoration: none;
-    }
-    body {
-      margin: 0;
-      padding: 0;
-    }
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-    ul, li {
-      margin: 0;
-      padding: 0;
-      border: 0;
-      outline: 0;
-      font-size: 90%;
-      vertical-align: baseline;
-      background: transparent;
-    }
-    ul>li {
-      display: inline;
-    }
-    ul>li:not(:nth-child(1)):before {
-      content: " | ";
-      color: #666;
-    }
-    .category {
-      padding: 2px;
-    }
-    .category:empty {
-      padding: 0;
-    }
-    .mapboxgl-container {
-      cursor: pointer;
-    }
-    .mapboxgl-popup {
-      padding-bottom: 0px;
-    }
-    .mapboxgl-popup-anchor-top>.mapboxgl-popup-content {
-      margin-top: 3px;
-    }
-    .mapboxgl-popup-anchor-top>.mapboxgl-popup-tip {
-      border-bottom-color: rgb(61, 59, 59);
-    }
-    .mapboxgl-popup-close-button {
-      display: none;
-    }
-    .mapboxgl-popup-content div.portalPhoto {
-      width: 100%;
-      text-align: center;
-    }
-    .mapboxgl-popup-content h3 {
-      background: rgb(61, 59, 59);
-      text-align: center;
-      color: #fff;
-      margin: 0;
-      display: block;
-      padding: 5px 10px;
-      font-weight: 700;
-      margin-top: -5px;
-    }
-    .mapboxgl-popup-content h4 {
-      margin: 0;
-      display: block;
-      padding: 0 5px;
-      line-height:1.8;
-      font-weight: 400;
-    }
-    .mapboxgl-popup-content {
-      font: 400 11px/16px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
-      padding: 0;
-      width: 225px;
-    }
-    .mapboxgl-popup-content-wrapper {
-      padding: 1%;
-    }
-    .portalPhoto img {
-      width: 215px;
-      margin-top: 10px;
-    }
-    #map {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 100%;
-    }
-    #map {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 100%;
-    }
-    #menu {
-      position: absolute;
-      background: rgba(191, 191, 191, 0.6);
-      padding: 5px;
-      font-family: 'Open Sans', sans-serif;
-    }
+a {
+  text-decoration: none;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  padding-left: 0;
+  list-style: none;
+}
+ul, li {
+  font-size: 90%;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  border: 0;
+  outline: 0;
+  background: transparent;
+}
+ul>li {
+  display: inline;
+}
+ul>li:not(:nth-child(1)):before {
+  content: ' | ';
+  color: #666;
+}
+.category {
+  padding: 2px;
+}
+.category:empty {
+  padding: 0;
+}
+.mapboxgl-container {
+  cursor: pointer;
+}
+.mapboxgl-popup {
+  padding-bottom: 0;
+}
+.mapboxgl-popup-anchor-top>.mapboxgl-popup-content {
+  margin-top: 3px;
+}
+.mapboxgl-popup-anchor-top>.mapboxgl-popup-tip {
+  border-bottom-color: rgb(61, 59, 59);
+}
+.mapboxgl-popup-close-button {
+  display: none;
+}
+.mapboxgl-popup-content div.portalPhoto {
+  width: 100%;
+  text-align: center;
+}
+.mapboxgl-popup-content h3 {
+  font-weight: 700;
+  display: block;
+  margin: 0;
+  margin-top: -5px;
+  padding: 5px 10px;
+  text-align: center;
+  color: #fff;
+  background: rgb(61, 59, 59);
+}
+.mapboxgl-popup-content h4 {
+  font-weight: 400;
+  line-height: 1.8;
+  display: block;
+  margin: 0;
+  padding: 0 5px;
+}
+.mapboxgl-popup-content {
+  font: 400 11px/16px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
+  width: 225px;
+  padding: 0;
+}
+.mapboxgl-popup-content-wrapper {
+  padding: 1%;
+}
+.portalPhoto img {
+  width: 215px;
+  margin-top: 10px;
+}
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+#menu {
+  font-family: 'Open Sans', sans-serif;
+  position: absolute;
+  padding: 5px;
+  background: rgba(191, 191, 191, .6);
+}
   </style>
 </head>
 <body>
