@@ -140,7 +140,7 @@ ul>li:not(:nth-child(1)):before {
     $(document).ready(function () {
       $.ajax({
         type: "GET",
-        url: 'https://docs.google.com/spreadsheets/d/1ry2hwuzi-SArBQhrsDAP9LTJHBbi3hAyWGo9a4JBxfI/gviz/tq?tqx=out:csv&sheet=map data',
+        url: 'https://docs.google.com/spreadsheets/d/1ry2hwuzi-SArBQhrsDAP9LTJHBbi3hAyWGo9a4JBxfI/gviz/tq?tqx=out:csv&sheet=map_data',
         dataType: "text",
         success: function (csvData) {
           makeGeoJSON(csvData);
